@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1d7000-dc00-44bc-bba4-c5ced1f0c248" name="Changes" comment="init commit">
+    <list default="true" id="3a1d7000-dc00-44bc-bba4-c5ced1f0c248" name="Changes" comment="if -&gt; switch, typo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xml_json.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml_json.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689854920054</updated>
-      <workItem from="1689854921333" duration="11772000" />
+      <workItem from="1689854921333" duration="15823000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1689864526070</created>
@@ -85,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689866544966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="if -&gt; switch, typo">
+      <created>1689876210153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689876210153</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,9 +114,19 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="if -&gt; switch, typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="if -&gt; switch, typo" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DeferredTextImpl)node_).nextSibling" custom="com.sun.org.apache.xerces.internal.dom.DeferredTextImpl" />

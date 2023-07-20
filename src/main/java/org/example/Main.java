@@ -2,45 +2,78 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.opencsv.CSVReader;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 public class Main {
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
+    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, ParseException {
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
         String fileName = "src/data.csv";
 
         List<Employee> list = parseCSV(columnMapping, fileName);
 
         String json = listToJson(list);
-        System.out.println(json);
+        //System.out.println(json);
         writeString(json, "src/new_json.json");
 
         List<Employee> xmlList = parseXML("src/data.xml");
-        System.out.println(xmlList);
+        //System.out.println(xmlList);
 
         String xmlJson = listToJson(xmlList);
         writeString(xmlJson, "src/xml_json.json");
 
+        String task3 = readString("src/new_json.json");
+        //System.out.println(task3);
 
+        List<Employee> task3List = jsonToList(task3);
+        task3List.forEach(System.out::println);
     }
+
+    public static List<Employee> jsonToList(String json) throws ParseException {
+        List<Employee> list = new ArrayList<>();
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(json);
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        for (Object o : jsonArray) {
+            JSONObject jso = (JSONObject) o;
+            list.add(gson.fromJson(String.valueOf(jso), Employee.class));
+        }
+        return list;
+        }
+    public static String readString(String fileName) {
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String s;
+            while ((s = br.readLine()) != null) {
+                sb.append(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
+
 
     public static List<Employee> parseCSV(String[] columnMapping, String filename) {
         List<Employee> staff = null;
@@ -59,6 +92,8 @@ public class Main {
         }
         return staff;
     }
+
+
 
     public static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
         List<Employee> list = new ArrayList<>();
