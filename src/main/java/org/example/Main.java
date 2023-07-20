@@ -36,6 +36,9 @@ public class Main {
         List<Employee> xmlList = parseXML("src/data.xml");
         System.out.println(xmlList);
 
+        String xmlJson = listToJson(xmlList);
+        writeString(xmlJson, "src/xml_json.json");
+
 
     }
 
@@ -67,14 +70,32 @@ public class Main {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node_ = nodeList.item(i);
             if (Node.ELEMENT_NODE == node_.getNodeType()) {
-                //System.out.println( "Текущий узел: " + node_.getNodeName());
                 Element element = (Element) node_;
-                String id = element.getElementsByTagName("id").item(0).getTextContent();
-                String firstName = element.getElementsByTagName("firstName").item(0).getTextContent();
-                String lastName = element.getElementsByTagName("lastName").item(0).getTextContent();
-                String country = element.getElementsByTagName("country").item(0).getTextContent();
-                String age = element.getElementsByTagName("age").item(0).getTextContent();
-                list.add(new Employee(Integer.parseInt(id), firstName, lastName, country, Integer.parseInt(age)));
+                if ("employee".equals(element.getNodeName())) {
+                    NodeList childNodes = element.getChildNodes();
+                    Employee employee = new Employee();
+                    for (int j = 0; j < childNodes.getLength(); j++) {
+                        Node sanya = childNodes.item(j);
+                        if ("id".equals(sanya.getNodeName())) {
+                            employee.setId(Integer.parseInt(sanya.getTextContent()));
+                        } else if ("firstName".equals(sanya.getNodeName())) {
+                            employee.setFirstName(sanya.getTextContent());
+                        } else if ("lastName".equals(sanya.getNodeName())) {
+                            employee.setLastName(sanya.getTextContent());
+                        } else if ("country".equals(sanya.getNodeName())) {
+                            employee.setCountry(sanya.getTextContent());
+                        } else if ("age".equals(sanya.getNodeName())) {
+                            employee.setAge(Integer.parseInt(sanya.getTextContent()));
+                        }
+                    }
+//                    String id = element.getElementsByTagName("id").item(0).getTextContent();
+//                    String firstName = element.getElementsByTagName("firstName").item(0).getTextContent();
+//                    String lastName = element.getElementsByTagName("lastName").item(0).getTextContent();
+//                    String country = element.getElementsByTagName("country").item(0).getTextContent();
+//                    String age = element.getElementsByTagName("age").item(0).getTextContent();
+
+                    list.add(employee);
+                }
             }
         }
        return list;
