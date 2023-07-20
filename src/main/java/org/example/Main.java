@@ -75,17 +75,13 @@ public class Main {
                     NodeList childNodes = element.getChildNodes();
                     Employee employee = new Employee();
                     for (int j = 0; j < childNodes.getLength(); j++) {
-                        Node sanya = childNodes.item(j);
-                        if ("id".equals(sanya.getNodeName())) {
-                            employee.setId(Integer.parseInt(sanya.getTextContent()));
-                        } else if ("firstName".equals(sanya.getNodeName())) {
-                            employee.setFirstName(sanya.getTextContent());
-                        } else if ("lastName".equals(sanya.getNodeName())) {
-                            employee.setLastName(sanya.getTextContent());
-                        } else if ("country".equals(sanya.getNodeName())) {
-                            employee.setCountry(sanya.getTextContent());
-                        } else if ("age".equals(sanya.getNodeName())) {
-                            employee.setAge(Integer.parseInt(sanya.getTextContent()));
+                        Node childNode = childNodes.item(j);
+                        switch (childNode.getNodeName()) {
+                            case "id" -> employee.setId(Integer.parseInt(childNode.getTextContent()));
+                            case "firstName" -> employee.setFirstName(childNode.getTextContent());
+                            case "lastName" -> employee.setLastName(childNode.getTextContent());
+                            case "country" -> employee.setCountry(childNode.getTextContent());
+                            case "age" -> employee.setAge(Integer.parseInt(childNode.getTextContent()));
                         }
                     }
 //                    String id = element.getElementsByTagName("id").item(0).getTextContent();
