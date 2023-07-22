@@ -60,7 +60,8 @@ public class Main {
             list.add(gson.fromJson(String.valueOf(jso), Employee.class));
         }
         return list;
-        }
+    }
+
     public static String readString(String fileName) {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -75,24 +76,20 @@ public class Main {
     }
 
 
-    public static List<Employee> parseCSV(String[] columnMapping, String filename) {
+    public static List<Employee> parseCSV(String[] columnMapping, String filename) throws FileNotFoundException {
         List<Employee> staff = null;
-        try (CSVReader reader = new CSVReader(new FileReader(filename))) {
+        CSVReader reader = new CSVReader(new FileReader(filename));
             ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
             strategy.setType(Employee.class);
             strategy.setColumnMapping(columnMapping);
-
             CsvToBean<Employee> csv = new CsvToBeanBuilder<Employee>(reader)
                     .withMappingStrategy(strategy)
                     .build();
             staff = csv.parse();
             //staff.forEach(System.out::println);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         return staff;
     }
-
 
 
     public static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
@@ -119,22 +116,17 @@ public class Main {
                             case "age" -> employee.setAge(Integer.parseInt(childNode.getTextContent()));
                         }
                     }
-//                    String id = element.getElementsByTagName("id").item(0).getTextContent();
-//                    String firstName = element.getElementsByTagName("firstName").item(0).getTextContent();
-//                    String lastName = element.getElementsByTagName("lastName").item(0).getTextContent();
-//                    String country = element.getElementsByTagName("country").item(0).getTextContent();
-//                    String age = element.getElementsByTagName("age").item(0).getTextContent();
-
                     list.add(employee);
                 }
             }
         }
-       return list;
+        return list;
     }
 
 
     public static String listToJson(List<Employee> list) {
-        Type listType = new TypeToken<List<Employee>>() {}.getType();
+        Type listType = new TypeToken<List<Employee>>() {
+        }.getType();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         return gson.toJson(list, listType);

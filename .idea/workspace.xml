@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1d7000-dc00-44bc-bba4-c5ced1f0c248" name="Changes" comment="if -&gt; switch, typo">
+    <list default="true" id="3a1d7000-dc00-44bc-bba4-c5ced1f0c248" name="Changes" comment="task3">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test_bad_csv.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test_xml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/xml_json.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/xml_json.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -40,12 +46,24 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MainTest">
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JSONXML" />
       <extension name="coverage">
         <pattern>
@@ -53,13 +71,84 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSONXML" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="foo(java.lang.String,java.lang.Class)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.parseBadCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSONXML" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="parseBadCSV(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.parseBadXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSONXML" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="parseBadXML" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.parseXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSONXML" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="parseXML(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.MainTest.parseBadXML" />
+        <item itemvalue="JUnit.MainTest.parseXML" />
+        <item itemvalue="JUnit.MainTest.foo" />
+        <item itemvalue="JUnit.MainTest.parseBadCSV" />
       </list>
     </recent_temporary>
   </component>
@@ -71,7 +160,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689854920054</updated>
-      <workItem from="1689854921333" duration="15823000" />
+      <workItem from="1689854921333" duration="16396000" />
+      <workItem from="1690011302813" duration="4932000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1689864526070</created>
@@ -94,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689876210153</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="task3">
+      <created>1689881029545</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689881029545</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,18 +212,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init commit" />
     <MESSAGE value="if -&gt; switch, typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="if -&gt; switch, typo" />
+    <MESSAGE value="task3" />
+    <option name="LAST_COMMIT_MESSAGE" value="task3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DeferredTextImpl)node_).nextSibling" custom="com.sun.org.apache.xerces.internal.dom.DeferredTextImpl" />
